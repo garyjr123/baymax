@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baymax</title>
+    <style>
+        body{
+            /* background-image: url("../asset/baymax.jpg"); */
+            /* background-image: url("../asset/bg.png"); */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body id="body">
+    <img id="img" onclick="cl()" src="../asset/box.png" alt="">
+</body>
+<script>
+    // cl();
+    const sound = new Audio();
+    sound.src='../asset/baymax.mp3';
+    function cl(){
+        // alert("ok");
+        sound.play();
+        document.getElementById("img").style='display:none;';
+        document.getElementById("body").style='background-image:url(../asset/baymax.jpg);background-size:cover';
+        setInterval(function(){
+            // alert("ok");
+            location.replace("exercise.html");
+        },7000);
+        
+        
+    }
+    // setTimeout(function(){
+        // cl();
+
+    // },200);
+</script>
+</html>

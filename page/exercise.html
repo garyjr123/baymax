@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baymax Rehab</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a url("../asset/baymax.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: opacity 2s ease-in-out; /* For the fade-out effect */
+        }
+
+        .contain {
+            background-color: rgba(0, 0, 0, 0.85);
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #444;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .exercise-item {
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #ff4d4d; /* Red */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .exercise-item img {
+            width: 280px;
+             height: 180px;
+            /*object-fit: cover; */
+            border-radius: 5px;
+        }
+
+        .exercise-item.completed {
+            background-color: #2ecc71 !important; /* Green */
+        }
+
+        .status-text {
+            color: white;
+            font-size: 12px;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        /* Baymax Button Style */
+        .satisfaction-btn {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .satisfaction-btn:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .satisfaction-btn:active {
+            transform: scale(0.95);
+        }
+
+        #message {
+            color: #2ecc71;
+            margin-top: 15px;
+            font-style: italic;
+            height: 20px; /* Space reserved for message */
+        }
+        .step{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contain" id="app-container">
+        <h2>Personal Healthcare Companion</h2>
+        
+        <div class="exercise-grid">
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/1.png" alt="Ex 1">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Seated ankle movement
+        	up and down ng paa (like gas pedal) 
+        	10–15 reps x 3 sets (right foot extra focus) 
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/1next.png" alt="Ex 2">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+            Toe spread + relax
+            	i-buka at i-relax ang toes 
+            	10 reps 
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/2.png" alt="Ex 3">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Calf stretch (very important)
+👉 para hindi nagco-contract yung foot
+	tumayo sa pader 
+	right leg nasa likod 
+	heel flat sa floor 
+	lean forward 
+⏱ 20–30 sec hold x 3
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/3.png" alt="Ex 3">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Side leg raises (with cane support kung kailangan)
+	dahan-dahang itaas ang right leg sa side 
+	10 reps x 3 sets 
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/4.png" alt="Ex 3">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Glute bridge
+	higa, tuhod nakabaluktot 
+	itaas balakang 
+	10–15 reps x 3 sets 
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/5.png" alt="Ex 4">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Weight shifting
+	tumayo, cane or wall support 
+	ilipat weight left → right slowly 
+	10–15 reps 
+
+            </p>
+            <div class="exercise-item" onclick="toggleComplete(this)">
+                <img src="../exercise/walk.png" alt="Ex 4">
+                <span class="status-text">Pending</span>
+            </div>
+            <p class="step">
+                Controlled stepping practice (VERY IMPORTANT)
+👉 ito directly sa “kembot” issue mo
+•	dahan-dahang hakbang (short step lang muna) 
+•	focus: 
+o	hips steady 
+o	right foot straight landing 
+•	5 mins daily practice 
+⚠️ wag muna long steps
+
+            </p>
+        </div>
+
+        <button class="satisfaction-btn" onclick="deactivate()">
+            I am satisfied with your care
+        </button>
+        
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function toggleComplete(element) {
+            element.classList.toggle('completed');
+            const text = element.querySelector('.status-text');
+            text.innerText = element.classList.contains('completed') ? "Completed" : "Pending";
+            cant();
+        }
+        const bala = new Audio();
+        bala.src="../asset/balalala.mp3";
+
+        function deactivate() {
+            const msg = document.getElementById('message');
+            msg.innerText = "Balalala.";
+            bala.play();
+            
+            // Fade out the whole screen after a short delay
+            setTimeout(() => {
+                document.body.style.opacity = '0';
+                setTimeout(function(){
+                        location.replace("intro.html");
+                },2000);
+            }, 1000);
+        }
+        function cant(){
+            const cant = new Audio();
+            cant.src="../asset/satisfied.mp3";
+            cant.play();
+        }
+
+        // //////////
+    //  <script>
+    // function startRecognition() {
+    //   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    //   const recognition = new SpeechRecognition();
+
+    //   recognition.lang = 'en-US';
+    //   recognition.start();
+
+    //   recognition.onresult = function(event) {
+    //     const transcript = event.results[0][0].transcript.toLowerCase();
+    //     console.log("Narinig:", transcript);
+
+    //     // if (transcript.includes("i satisfied with your care")) {
+    //     if (transcript.includes("okay")) {
+    //       // alert("okayyyy");
+    //       location.replace("try.html");
+    //     }
+    //   };
+
+    //   recognition.onerror = function(event) {
+    //     console.error("Error:", event.error);
+    //   };
+    // }
+    // setInterval(() => {
+    //   startRecognition();
+    //   setTimeout(() => {
+    //       // location.reload();
+    //       startRecognition();
+    //     }, 5000);
+    // }, 5000);
+    // startRecognition();
+  </script>
+</body>
+</html>
